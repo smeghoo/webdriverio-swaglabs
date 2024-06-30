@@ -23,6 +23,13 @@ export const config = {
     specs: [
         './test/specs/**/*.js'
     ],
+    services: [
+        ['selenium-standalone', {
+            drivers: {
+                chrome: '126.0.6478.126'
+            }
+        }]
+    ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
