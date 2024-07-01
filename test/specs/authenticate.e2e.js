@@ -24,12 +24,12 @@ describe("User Authentication", () => {
   });
 
   it("should not login with no username ", async () => {
-    await AuthActions.noUsername();
+    await AuthActions.noUsername(testdata.password);
     await browser.refresh();
   });
 
   it("should not login with no password ", async () => {
-    await AuthActions.noPassword();
+    await AuthActions.noPassword(testdata.username);
     await browser.refresh();
   });
 
