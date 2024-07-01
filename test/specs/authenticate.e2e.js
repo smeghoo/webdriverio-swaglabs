@@ -23,6 +23,16 @@ describe("User Authentication", () => {
     await browser.refresh();
   });
 
+  it("should not login with no username ", async () => {
+    await AuthActions.noUsername();
+    await browser.refresh();
+  });
+
+  it("should not login with no password ", async () => {
+    await AuthActions.noPassword();
+    await browser.refresh();
+  });
+
   it("should block access for locked user account", async () => {
     await AuthActions.accountLockedError("locked_out_user", testdata.password);
   });

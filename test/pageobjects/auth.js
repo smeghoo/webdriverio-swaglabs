@@ -66,6 +66,20 @@ class AuthActions extends Page {
         await expect(browser).toHaveUrl(`https://www.saucedemo.com/`);
     }
 
+    async noUsername(password){
+        await this.password.setValue(password);
+        await this.btnSubmit.click();
+        await expect (this.signInError).toHaveText(expect.stringMatching("Epic sadface: Username is required"));
+        await expect(browser).toHaveUrl(`https://www.saucedemo.com/`);
+    }
+
+    async noPassword(username){
+        await this.username.setValue(username);
+        await this.btnSubmit.click();
+        await expect (this.signInError).toHaveText(expect.stringMatching("Epic sadface: Password is required"));
+        await expect(browser).toHaveUrl(`https://www.saucedemo.com/`);
+    }
+
 
 
     /**
