@@ -52,6 +52,7 @@ export const config = {
     capabilities: [{
         browserName: 'chrome',   // or 'chromium'
         'goog:chromeOptions': {
+            binary: '/tmp/chrome/linux-126.0.6478.126/chrome-linux64/chrome',
             args: ['headless', 'disable-gpu']
         }
     }],
